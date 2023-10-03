@@ -12,13 +12,13 @@ url: /creator/3d-modeling/textures
 weight: 4
 ---
 
-Textures are a key part of the 3D art pipeline to achieve the look and feel you want for your scene. In this section you will find everything you need to know to create your textures, limitations, nodes in Blender and optimizing them to perform as its best! 
+Textures are a key part of the 3D art pipeline to achieve the look and feel you want for your scene. In this section, you will find everything you need to know to create your textures, limitations, nodes in Blender and optimizing them to perform as its best! 
 
 # **Limitations**
 
 ## **Texture Size Constraints**
 
-Currently the Decentraland Explorer compress the textures at a maximun of 512px for optimization purpeses using an Asset Bundle Converter after the scene is uplaoded to the content servers. Be sure to take this limitations into account when creating your assets!
+Currently, the Decentraland Explorer compresses the textures at a maximum of 512px for optimization purposes using an Asset Bundle Converter after the scene is uploaded to the content servers. Be sure to take this limitations into account when creating your assets!
 
 Another important point to take into account is that textures should be always power of two, any textures that are not following this specification may bring issues when rendering the scene.
 
@@ -54,7 +54,7 @@ To know more about UV Unwrapping you can see this awesome video made by the Blen
 
 [![Video Preview](https://i.ytimg.com/vi/Y7M-B6xnaEM/maxresdefault.jpg)](https://youtu.be/Y7M-B6xnaEM?si=qMnWTMsXxC-vxZAH)
 
-There is another great intermidiate level tutorial for unwrapping UVs made by [Blender Guru] (https://www.youtube.com/@blenderguru) that explains how to unwrap a more complex model:
+There is another great intermediate level tutorial for unwrapping UVs made by [Blender Guru] (https://www.youtube.com/@blenderguru) that explains how to unwrap a more complex model:
 
 [![Video Preview](https://i.ytimg.com/vi/scPSP_U858k/maxresdefault.jpg)](https://youtu.be/scPSP_U858k?si=Uw0xHbv9jtqVstDS)
 
@@ -80,7 +80,7 @@ In a Metallic map, the grayscale map represents the grade of metalness an object
 
 <img src="/images/3d-models-and-animations/3d-essentials/64-metallic-map.png" width="900" />
 
-_In the image we can see how the dark parts of the texture affect the model. The dark stripes are opaque, while the white stripe is beahving under the metallic shader properties and gray being a mixture between both._
+_In the image we can see how the dark parts of the texture affect the model. The dark stripes are opaque, while the white stripe is behaving under the metallic shader properties and gray being a mixture between both._
 
 # **Roughness Maps**
 
@@ -101,7 +101,7 @@ In the following example we used a material with alpha clip, using 2 textures, t
 
 <img src="/images/3d-models-and-animations/3d-essentials/33-alpha-blender.png" width="600" />
 
-_As a result we can see the areas painted in black are discarted while the white area are being rendered_
+_As a result we can see the areas painted in black are discarded while the white area are being rendered_
 
 ### **Alpha Blend**
 
@@ -116,8 +116,8 @@ _While Alpha Clip render values being 0 or 1 (in a specific threshold) Alpha Ble
 {{< hint warning >}}
 **🔥Optimization Tip🔥**
 
-- Take into account that transparent textures (RGB+A) are always more expensive in termns of performance that using a grayscale value for transparencies. 
-- Transparency is always an expensive operation when rendering the scene. Try always to keep the transparencies at minimun and use Alpha Blend only when it's necessary, otherwise Alpha Clip is preferred rather than Alpha Blend.
+- Take into account that transparent textures (RGB+A) are always more expensive in terms of performance that using a grayscale value for transparencies. 
+- Transparency is always an expensive operation when rendering the scene. Try always to keep the transparencies at a minimum and use Alpha Blend only when it's necessary, otherwise, Alpha Clip is preferred rather than Alpha Blend.
 {{< /hint >}}
 
 # **Emissive Maps**
@@ -130,7 +130,7 @@ _In this example we can see the use of an emissive map combined with emissive st
 
 # **Normal Maps**
 
-A normal map is a type of texture used in 3D graphics to simulate fine surface details and create the illusion of complex geometry without actually altering the underlying geometry of a model. It's commonly used to enhance the realism of low-poly models by adding the appearance of bumps, crevices, and other surface irregularities. It also allows you to keep the object themselves lighter, as lots of details can be provided on the normal map layer instead of complex geometry.
+A normal map is a type of texture used in 3D graphics to simulate fine surface details and create the illusion of complex geometry without actually altering the underlying geometry of a model. It's commonly used to enhance the realism of low-poly models by adding the appearance of bumps, crevices, and other surface irregularities. It also allows you to keep the objects themselves lighter, as lots of details can be provided on the normal map layer instead of complex geometry.
 
 <img src="/images/3d-models-and-animations/3d-essentials/51-normal-map.png" width="300" />
 <img src="/images/3d-models-and-animations/3d-essentials/50-normal.gif" width="600" />
@@ -146,17 +146,17 @@ Never use a texture as albedo and normal at the same time because can create iss
 
 # **Optimizing Textures**
 
-The process of optimization textures brings a lot of benefits when rendering the scene in the explorer but also it's a good way to keep the style of your scene consistent and more flexible in the design process. Some of these benefits are:
+The process of optimizing textures brings a lot of benefits when rendering the scene in the explorer but also it's a good way to keep the style of your scene consistent and more flexible in the design process. Some of these benefits are:
 
-- Having optimized textures in size and compression will run the scene much smoother and faster, making it faster to download and easier to render (specially for players that have a slow internet connection).
+- Having optimized textures in size and compression will run the scene much smoother and faster, making it faster to download and easier to render (especially for players that have a slow internet connection).
 
 - It reduces the amount of memory and processing power to render your experience, resulting in a better user experience for your players.
 
 - It saves storage from the community content servers.
 
-- Using **Texture Atlases** and/or **Trim Sheets** will give you more flexibility to iterate the creation of your scene and style consistensy between the objects. Using these techniques you can easily swap textures, adjust colors or patterns instead of doing it individually for each model.
+- Using **Texture Atlases** and/or **Trim Sheets** will give you more flexibility to iterate the creation of your scene and style consistently between the objects. Using these techniques you can easily swap textures, adjust colors or patterns instead of doing it individually for each model.
 
-- Sharing textures across models allows to have less textures per scene, reducing the draw calls in game drastically. If you're working with glbs (with embebbed textures) you will find an extruder in the following guidelines to extract the textures from it, redirecting the models to use the same texture.
+- Sharing textures across models allows to have less textures per scene, reducing the draw calls in game drastically. If you're working with glbs (with embedded textures) you will find an extruder in the following guidelines to extract the textures from it, redirecting the models to use the same texture.
 
 # **Shared Textures Between glTFs Models**
 
@@ -231,11 +231,11 @@ Once you have exported all the assets to your models folder you can drag the scr
 <img src="/images/3d-models-and-animations/glb-extractor/11-windows-02.png" width="600" />
 <img src="/images/3d-models-and-animations/glb-extractor/12-windows-03.png" width="600" />
 
-2 - The script will generate a folder called out , there you will fid all new .glb files with its extracted textures.
+2 - The script will generate a folder called out , there you will find all new .glb files with its extracted textures.
 
 <img src="/images/3d-models-and-animations/glb-extractor/13-windows-03.png" width="600" />
 
-5 - Replace all assets with the new ones. Once finished, delete the "texture-extractor.bat" script and the empty "out" folder.
+3 - Replace all assets with the new ones. Once finished, delete the "texture-extractor.bat" script and the empty "out" folder.
 
 If you follow all the steps your scene will be much faster now and the assets will share the same texture! When we work with several assets and big scenes the improvement is quite noticeable! With this tool you can save quite a lot of megabytes of information!
 
@@ -255,7 +255,7 @@ Below is an image showing several 3D objects that use one texture set:
 
 <img src="/images/3d-models-and-animations/3d-essentials/37-atlas-texture.png" width="300" /> <img src="/images/3d-models-and-animations/3d-essentials/38-uv-atlas.png" width="300" />
 
-Another way to do Atlases is the use of Trim Sheets, a common technique in 3D modeling and game development that big studios and game industry use to ensure visual consistency and efficent art pipeline. Trim Sheets is the usage of a single image or texture that contains multiple small details or elements that can be applied to different parts of a model. This technique is very useful when creating large scenes and it needs to be considered in the first stage of the art pipeline. 
+Another way to do Atlases is the use of Trim Sheets, a common technique in 3D modeling and game development that big studios and game industry use to ensure visual consistency and efficient art pipeline. Trim Sheets is the usage of a single image or texture that contains multiple small details or elements that can be applied to different parts of a model. This technique is very useful when creating large scenes and it needs to be considered in the first stage of the art pipeline. 
 
 <img src="/images/3d-models-and-animations/3d-essentials/39-trim-sheets.png" width="300" />
 
@@ -270,7 +270,7 @@ There is a great [tutorial](https://www.artstation.com/blogs/jennifermcgarry/yd4
 - Make your art pipeline more efficient, flexible, organized, easy to target and modify if it's necessary.
 - Avoid of to overlap textures with the same name using the texture extractor or others tools.
 - Avoid issues of overlapping textures when using Asset Bundles.
-- More efficient way to pain point issues when analasing the scene.
+- More efficient way to pain point issues when analyzing the scene.
 
 **How to proper name your Textures:**
 - **Asset name** should clearly represent what the texture is.
